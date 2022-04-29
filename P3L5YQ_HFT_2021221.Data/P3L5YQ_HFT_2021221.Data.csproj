@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Dealership.mdf" />
+    <None Remove="Dealership_log.ldf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Dealership.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dealership_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\P3L5YQ_HFT_2021221.Models\P3L5YQ_HFT_2021221.Models.csproj" />
+  </ItemGroup>
+
+</Project>

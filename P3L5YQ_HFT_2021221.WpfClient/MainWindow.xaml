@@ -1,0 +1,105 @@
+﻿<Window x:Class="P3L5YQ_HFT_2021221.WpfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:P3L5YQ_HFT_2021221.WpfClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1600" WindowState="Maximized">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <ListBox ItemsSource="{Binding Cars}" SelectedItem="{Binding SelectedCar}" Grid.Row="0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Type}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox ItemsSource="{Binding Engines}" SelectedItem="{Binding SelectedEngine}" Grid.Row="1">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding EngineType}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox ItemsSource="{Binding TrimLevels}" SelectedItem="{Binding SelectedTrimLevel}" Grid.Row="2">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding TrimPackageName}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+        <StackPanel Grid.Column="1">
+            <Label Content="{Binding SelectedCar.EngineId}" ContentStringFormat="EngineId:{0}" Background="LightBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedCar.EngineId}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedCar.TrimPackageId}" ContentStringFormat="TrimpackageId:{0}" Background="LightBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedCar.TrimPackageId}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedCar.Type}" ContentStringFormat="Type:{0}" Background="LightBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedCar.Type}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedCar.Mileage}" ContentStringFormat="Mileage:{0}" Background="LightBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedCar.Mileage}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedCar.Price}" ContentStringFormat="Price:{0}" Background="LightBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedCar.Price}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedCar.Mileage}" ContentStringFormat="Mileage:{0}" Background="LightBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedCar.Mileage}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedCar.ManufDate}" ContentStringFormat="ManufDate:{0}" Background="LightBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedCar.ManufDate}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedCar.ChasisColor}" ContentStringFormat="ChasisColor:{0}" Background="LightBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedCar.ChasisColor}" Padding="2" Margin="0,0,0,5"/>
+            <WrapPanel>
+                <Button Content="Create Car" Command="{Binding CreateCarCommand}"/>
+                <Button Content="Delete Car" Command="{Binding DeleteCarCommand}"/>
+                <Button Content="Update Car" Command="{Binding UpdateCarCommand}"/>
+            </WrapPanel>
+
+
+            <Label Content="{Binding SelectedEngine.Enginename}" ContentStringFormat="Enginename:{0}" Background="AliceBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedEngine.Enginename}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedEngine.EngineType}" ContentStringFormat="EngineType:{0}" Background="AliceBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedEngine.EngineType}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedEngine.PowerOutput}" ContentStringFormat="PowerOutput:{0}" Background="AliceBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedEngine.PowerOutput}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedEngine.Torque}" ContentStringFormat="Torque:{0}" Background="AliceBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedEngine.Torque}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedEngine.Displacement}" ContentStringFormat="Displacement:{0}" Background="AliceBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedEngine.Displacement}" Padding="2" Margin="0,0,0,5"/>
+            <WrapPanel>
+                <Button Content="Create Engine" Command="{Binding CreateEngineCommand}"/>
+                <Button Content="Delete Engine" Command="{Binding DeleteEngineCommand}"/>
+                <Button Content="Update Engine" Command="{Binding UpdateEngineCommand}"/>
+            </WrapPanel>
+
+            <Label Content="{Binding SelectedTrimLevel.TrimPackageName}" ContentStringFormat="TrimPackageName:{0}" Background="LightBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedTrimLevel.TrimPackageName}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedTrimLevel.AC}" ContentStringFormat="AC:{0}" Background="LightBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedTrimLevel.AC}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedTrimLevel.TwozoneAutomaticAC}" ContentStringFormat="TwozoneAutomaticAC:{0}" Background="LightBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedTrimLevel.TwozoneAutomaticAC}" Padding="2.5" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedTrimLevel.AlloWheels}" ContentStringFormat="AlloWheels:{0}" Background="LightBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedTrimLevel.AlloWheels}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedTrimLevel.RoofRack}" ContentStringFormat="RoofRack:{0}" Background="LightBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedTrimLevel.RoofRack}" Padding="2" Margin="0,0,0,5"/>
+            <Label Content="{Binding SelectedTrimLevel.WeightHook}" ContentStringFormat="WeightHook:{0}" Background="LightBlue" Padding="2"/>
+            <TextBox Text="{Binding SelectedTrimLevel.WeightHook}" Padding="2" Margin="0,0,0,5"/>
+            <WrapPanel>
+                <Button Content="Create TrimLevel" Command="{Binding CreateTrimLevelCommand}"/>
+                <Button Content="Delete TrimLevel" Command="{Binding DeleteTrimLevelCommand}"/>
+                <Button Content="Update TrimLevel" Command="{Binding UpdateTrimLevelCommand}"/>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>

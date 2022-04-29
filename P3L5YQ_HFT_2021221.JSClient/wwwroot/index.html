@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Car Database</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Car Catalog:</h1>
+    <div id="formdiv">
+        <label>Car Type:</label>
+        <input type="text" id="createcartype" />
+
+        <label>TrimLevelPackage ID:</label>
+        <input type="text" id="createtrimid" />
+
+        <label>Engine ID:</label>
+        <input type="text" id="createengineid" />
+
+        <label>Mileage:</label>
+        <input type="text" id="createmileage" />
+
+        <label>Price:</label>
+        <input type="text" id="createprice" />
+
+        <label>GlossBlack(0) Red(1) White(2) Green(3) Blue(4)</label>
+        <label>Yellow(5) Orange(6) Shempgane(7) PearlBlack(8) PearlWhite(9) DeepRed(10)</label>
+        <label>Color is a number between (0 - 10):</label>
+        <input type="text" id="createcolor" />
+
+        <label>Manufacturing date:</label>
+        <input type="text" id="createmanufdate" />
+
+        <label>Condition:</label>
+        <input type="text" id="createcondi" />
+
+        <button type="button" onclick="create()">Add Car</button>
+    </div>
+    <div id="updateformdiv">
+        <label>Car to Update(Id):</label>
+        <input type="text" id="CarToUpdate" />
+
+        <label>TrimLevelPackage ID:</label>
+        <input type="text" id="updatetrimid" />
+
+        <label>Engine ID:</label>
+        <input type="text" id="updateengineid" />
+
+        <label>Mileage:</label>
+        <input type="text" id="updatemileage" />
+
+        <label>Price:</label>
+        <input type="text" id="updateprice" />
+
+        <label>GlossBlack(0) Red(1) White(2) Green(3) Blue(4)</label>
+        <label>Yellow(5) Orange(6) Shempgane(7) PearlBlack(8) PearlWhite(9) DeepRed(10)</label>
+        <label>Color is a number between (0 - 10):</label>
+        <input type="text" id="updatecolors" />
+
+        <label>Manufacturing date:</label>
+        <input type="text" id="updatemanufdate" />
+
+        <label>Condition:</label>
+        <input type="text" id="updatecondi" />
+
+        <button type="button" onclick="update()">Update Car</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Car ID</th>
+                <th>Type</th>
+                <th>Functions</th>
+            </tr>
+        </thead>
+        <tbody id="resultarea">
+        </tbody>
+    </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
